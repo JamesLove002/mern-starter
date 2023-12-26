@@ -9,6 +9,7 @@ const getCharacters = async (req: Request, res: Response) => {
 
 const addCharacter = async (req: Request, res: Response) => {
   const body = req.body as ICharacter;
+  console.log({ body });
   const character = new Character(body);
   const newCharacter = await character.save();
   const allCharacters = await Character.find();

@@ -1,1 +1,7 @@
-GET http://localhost:1156/character/
+POST http://localhost:1156/character/add HTTP/1.1
+content-type: application/json
+
+{
+    "Title": "The Righteous",
+    "Name": "Juyethmaheth"
+}

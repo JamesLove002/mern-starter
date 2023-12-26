@@ -15,6 +15,7 @@ mongoose
   .catch((err) => console.log("Error connecting to MongoDB: ", err));
 
 const app = express();
+app.use(express.json());
 const port = process.env.PORT || 80;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
