@@ -4,7 +4,7 @@
   "description": "Everything an empty app needs: Mongo Mongo database in production online Express React Hosting of React front end Node Hosting of Node Repo Unit tests CI of unit tests Deployment pipeline CD of deployment pipeline  All your certificates etc all actually working",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm run preview\"",
     "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
     "test": "concurrently \"npm run testClient\" \"npm run testServer\"",
     "testWithCoverage": "concurrently \"npm run testClientWithCoverage\" \"npm run testServerWithCoverage\"",
