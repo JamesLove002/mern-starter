@@ -6,7 +6,7 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   collectCoverage: true,
-  coverageDirectory: 'coverage',
+  coverageDirectory: 'server/coverage',
   globals: {
     'ts-jest': {
       tsconfig: 'server/tsconfig.json',
