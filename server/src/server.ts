@@ -17,6 +17,7 @@ mongoose
 const app = express();
 app.use(express.json());
 const port = process.env.PORT || 80;
+app.use(express.static("../client/dist"));
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 app.use("/character", characterRouter);
