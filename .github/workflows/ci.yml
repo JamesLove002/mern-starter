@@ -1,4 +1,4 @@
-name: Node.js CI
+name: App CI/CD
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -29,3 +29,20 @@ jobs:
         working-directory: client
       - run: npm run build --if-present
       - run: npm test
+  merge:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: production
+      - name: Merge main
+        run: |
+          git fetch origin
+          git merge origin/main
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: production
